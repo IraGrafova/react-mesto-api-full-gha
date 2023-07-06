@@ -1,0 +1,28 @@
+.card-form__save {
+  margin-top: 7px;
+  border: none;
+  background: #000000;
+  border-radius: 2px;
+  color: #fff;
+  width: 84%;
+  height: 46px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.card-form__save:hover {
+  opacity: 0.8;
+}
+@media (min-width: 1280px) {
+  .card-form__save {
+    width: 358px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 34px;
+  }
+}

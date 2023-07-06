@@ -1,0 +1,10 @@
+.profile-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 670px) {
+  .profile-data {
+    flex-direction: row;
+  }
+}

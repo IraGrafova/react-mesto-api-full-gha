@@ -1,0 +1,14 @@
+.authorization-form__sign-in {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+.authorization-form__sign-in:hover {
+  opacity: 0.6;
+}

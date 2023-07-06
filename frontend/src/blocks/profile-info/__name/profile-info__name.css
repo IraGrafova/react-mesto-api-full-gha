@@ -1,0 +1,9 @@
+.profile-info__name {
+  display: flex;
+  margin-left: 28px;
+}
+@media (min-width: 670px) {
+  .profile-info__name {
+    margin-left: 0;
+  }
+}

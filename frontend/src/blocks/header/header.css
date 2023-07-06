@@ -1,0 +1,14 @@
+.header {
+  min-height: 56px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 425px) {
+  .header {
+    width: 88%;
+    min-height: 118px;
+  }
+}

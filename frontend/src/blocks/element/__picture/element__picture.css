@@ -1,0 +1,10 @@
+.element__picture {
+  object-fit: cover;
+  object-position: top;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 282px;
+  aspect-ratio: 1/1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

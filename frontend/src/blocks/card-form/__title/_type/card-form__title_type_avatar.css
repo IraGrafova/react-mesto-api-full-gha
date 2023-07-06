@@ -1,0 +1,8 @@
+.card-form__title_type_avatar {
+  margin-bottom: 30px;
+}
+@media (min-width: 1280px) {
+  .card-form__title {
+    margin-bottom: 44px;
+  }
+}

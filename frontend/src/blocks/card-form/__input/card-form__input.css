@@ -1,0 +1,24 @@
+.card-form__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
+  width: 84%;
+  max-width: 358px;
+}
+.card-form__input:focus {
+  outline: none;
+  border: 1px solid lightblue;
+}
+.card-form__input::placeholder {
+  opacity: 0.3;
+}
+@media (min-width: 1280px) {
+  .card-form__input {
+    line-height: 28px;
+  }
+}

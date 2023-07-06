@@ -1,0 +1,22 @@
+.card-form__title {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 25px;
+  margin-bottom: 73px;
+  padding: 0;
+  width: 84%;
+  max-width: 358px;
+}
+@media (min-width: 1280px) {
+  .card-form__title {
+    align-self: flex-start;
+    margin-left: 36px;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 34px;
+    margin-bottom: 44px;
+  }
+}

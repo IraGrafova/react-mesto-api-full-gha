@@ -1,0 +1,13 @@
+.element {
+  object-fit: contain;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: relative;
+}
+@media (min-width: 1033px) {
+  .element {
+    max-width: 282px;
+  }
+}

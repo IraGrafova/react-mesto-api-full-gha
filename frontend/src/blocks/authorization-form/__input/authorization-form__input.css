@@ -1,0 +1,15 @@
+.authorization-form__input {
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background-color: black;
+  margin-bottom: 30px;
+}
+.authorization-form__input:focus {
+  outline: none;
+}
