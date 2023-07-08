@@ -25,11 +25,11 @@ function Login({ handleLogin }) {
     const { email, password } = formValue; // то же самое что formValue.email И formValue.password писать в следующей строке, просто упростили запись, вытащив переменные
     Auth.login({ email, password })
       .then((data) => {
-        if (data.token) {
-          localStorage.setItem("token", data.token);
+       if (data.token) {
+         localStorage.setItem("token", data.token);
           handleLogin(email);
           navigate("/");
-        }
+       }
       })
       .catch((err) => alert(err));
   }

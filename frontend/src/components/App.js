@@ -65,8 +65,11 @@ function App() {
   //лайки
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
-
+    const isLiked = card.likes.some((i) =>
+    // console.log(i)
+    // i._id === currentUser._id
+    i === currentUser._id
+    );
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
       .putLike(card._id, isLiked)
@@ -170,11 +173,14 @@ function App() {
   }
 
   function checkToken() {
+
     const token = localStorage.getItem("token");
+
     if (token) {
+
       Auth.jwt(token)
         .then((data) => {
-          handleLogin(data.data.email);
+          handleLogin(data.email);
           navigate("/");
         })
         .catch((err) => {
@@ -193,7 +199,6 @@ function App() {
   });
 
   function handleError() {
-    console.log("error");
     setIsTooltipPopup({
       img: Error,
       text: `Что-то пошло не так!
@@ -202,7 +207,6 @@ function App() {
   }
 
   function handleSuccess() {
-    console.log("success");
     setIsTooltipPopup({
       img: Success,
       text: `Вы успешно зарегистрировались!`,
@@ -238,13 +242,13 @@ function App() {
                 loggedIn ? (
                   <Navigate to="/" />
                 ) : (
-                  <Navigate to="/sign-in" replace />
+                  <Navigate to="/signin" replace />
                 )
               }
             />
 
             <Route
-              path="/sign-up"
+              path="/signup"
               element={
                 <Register
                   handleRegister={handleRegister}
@@ -254,7 +258,7 @@ function App() {
               }
             />
             <Route
-              path="/sign-in"
+              path="/signin"
               element={<Login handleLogin={handleLogin} />}
             />
           </Routes>

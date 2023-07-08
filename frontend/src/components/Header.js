@@ -8,7 +8,7 @@ function Header({ loggedIn, setLoggedIn, userEmail }) {
 
   function signOut() {
     localStorage.removeItem("token");
-    navigate("/sign-in");
+    navigate("/signin");
     setLoggedIn(false);
   }
 
@@ -16,14 +16,14 @@ function Header({ loggedIn, setLoggedIn, userEmail }) {
     <header className="header">
       <img className="logo" src={logo} alt="Логотип Место" />
 
-      {location.pathname === "/sign-up" && (
-        <NavLink to="/sign-in" className="header__link">
+      {location.pathname === "/signup" && (
+        <NavLink to="/signin" className="header__link">
           Войти
         </NavLink>
       )}
 
-      {location.pathname === "/sign-in" && (
-        <NavLink to="/sign-up" className="header__link">
+      {location.pathname === "/signin" && (
+        <NavLink to="/signup" className="header__link">
           Регистрация
         </NavLink>
       )}
@@ -31,7 +31,7 @@ function Header({ loggedIn, setLoggedIn, userEmail }) {
       {location.pathname === "/" && (
         <div className="header__logout">
           <p className="header__data-user">{userEmail}</p>
-          <NavLink to="/sign-in" className="header__link">
+          <NavLink to="/signin" className="header__link" onClick={signOut}>
             Выйти
           </NavLink>
         </div>

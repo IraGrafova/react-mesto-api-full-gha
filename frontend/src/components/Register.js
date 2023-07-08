@@ -27,7 +27,7 @@ function Register({ handleRegister, handleError, handleSuccess }) {
       .then(() => {
         handleRegister();
         handleSuccess();
-        navigate("/sign-in");
+        navigate("/signin");
       })
       .catch(() => {
         handleRegister();
@@ -60,7 +60,7 @@ function Register({ handleRegister, handleError, handleSuccess }) {
         <button type="submit" className="authorization-form__submit">
           Зарегистрироваться
         </button>
-        <NavLink to="/sign-in" className="authorization-form__sign-in">
+        <NavLink to="/signin" className="authorization-form__sign-in">
           Уже зарегистрированы? Войти
         </NavLink>
       </form>

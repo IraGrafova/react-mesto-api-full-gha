@@ -1,14 +1,19 @@
+// eslint-disable-next-line no-unused-expressions
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const cors = require('cors');
 
 const cookieParser = require('cookie-parser');
 const router = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const app = express();
+const { PORT = 3000 } = process.env;
+const app = express(process.env.JWT_SECRET);
 
 mongoose.connect('mongodb://127.0.0.1/mestodb', {
   useNewUrlParser: true,
@@ -19,10 +24,19 @@ app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true })); // для приёма веб-страниц внутри POST-запроса
 app.use(cookieParser());
 
+app.use(requestLogger); // подключаем логгер запросов
+
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:3001',
+}));
+
 app.use(router);
 
-app.use(errors());
+app.use(errorLogger); // подключаем логгер ошибок
 
-app.use(errorHandler);
+app.use(errors()); // обработчик ошибок celebrate
 
-app.listen(3000);
+app.use(errorHandler); // централизованный обработчик ошибок
+
+app.listen(PORT);
