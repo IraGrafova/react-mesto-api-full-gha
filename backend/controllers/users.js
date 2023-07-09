@@ -15,7 +15,6 @@ const getUsers = (req, res, next) => {
 };
 
 const getMe = (req, res, next) => {
-  console.log(req)
   User.findById(req.user._id)
     .orFail(() => new NotFound('id не найден'))
     .then((user) => res.status(200).send(user))
@@ -55,6 +54,7 @@ const createUser = (req, res, next) => {
 const login = (req, res, next) => {
   // вытаскиваем email и password из запроса
   const { email, password } = req.body;
+
   // найти пользователя
   User.findOne({ email })
     .select('+password')
@@ -64,24 +64,21 @@ const login = (req, res, next) => {
       // eslint-disable-next-line implicit-arrow-linebreak
       bcrypt.compare(password, user.password).then((isValidUser) => {
         if (isValidUser) {
-
           // если совпадает - вернуть пользователя
           // создать JWT
-          user.jwt = jsonWebToken.sign(
+          const jwt = jsonWebToken.sign(
             {
               _id: user._id,
             },
             process.env.JWT_SECRET,
           );
-
-          //user.jwt = jwt
-
-          // res.cookie('jwt', jwt, {
-          //   maxAge: 360000,
-          //   httpOnly: true,
-          //   sameSite: true,
-          // });
-          res.send({ user: user.toJSON(), token: user.jwt });
+          // прикрепить его к куке
+          res.cookie('jwt', jwt, {
+            maxAge: 360000,
+            httpOnly: true,
+            sameSite: true,
+          });
+          res.send({ data: user.toJSON() });
         } else {
           // если не совпадает - вернуть ошибку
           next(new LoginError('Передан неверный логин или пароль'));

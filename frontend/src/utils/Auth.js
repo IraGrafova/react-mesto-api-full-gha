@@ -2,6 +2,7 @@ export const baseUrl = "http://localhost:3000";
 
 export const register = (data) => {
   return fetch(`${baseUrl}/signup`, {
+    credentials: 'include',
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -17,6 +18,7 @@ export const register = (data) => {
 
 export const login = (data) => {
   return fetch(`${baseUrl}/signin`, {
+    credentials: 'include',
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -31,14 +33,14 @@ export const login = (data) => {
   });
 };
 
-export const jwt = (token) => {
+export const jwt = () => {
 
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
-    //credentials: 'include',
+    credentials: 'include',
     headers: {
       "content-type": "application/json",
-      Authorization: `Bearer ${token}`,
+     // Authorization: `Bearer ${token}`,
     },
   }).then((res) => {
     if (res.ok) {

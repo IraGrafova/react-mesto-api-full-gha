@@ -129,6 +129,7 @@ function App() {
 
   React.useEffect(() => {
     checkToken();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleUpdateUser(updateData) {
@@ -174,11 +175,11 @@ function App() {
 
   function checkToken() {
 
-    const token = localStorage.getItem("token");
+    //const token = localStorage.getItem("token");
 
-    if (token) {
+   // if (token) {
 
-      Auth.jwt(token)
+      Auth.jwt()
         .then((data) => {
           handleLogin(data.email);
           navigate("/");
@@ -186,7 +187,7 @@ function App() {
         .catch((err) => {
           alert(err);
         });
-    }
+   // }
   }
 
   function handleRegister() {
@@ -217,7 +218,7 @@ function App() {
     <div className="App">
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
-          <Header loggedIn={loggedIn} userEmail={userEmail} />
+          <Header setLoggedIn={setLoggedIn} userEmail={userEmail} />
           <Routes>
             <Route
               path="/"

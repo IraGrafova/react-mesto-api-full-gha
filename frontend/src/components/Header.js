@@ -7,7 +7,7 @@ function Header({ loggedIn, setLoggedIn, userEmail }) {
   let location = useLocation();
 
   function signOut() {
-    localStorage.removeItem("token");
+  //  localStorage.removeItem("token");
     navigate("/signin");
     setLoggedIn(false);
   }
