@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const cors = require('cors');
 
 const cookieParser = require('cookie-parser');
@@ -27,7 +28,7 @@ app.use(requestLogger); // подключаем логгер запросов
 
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3001',
+  origin: 'https://api.mesto-grafs.nomoreparties.sbs',
 }));
 
 app.use(router);
