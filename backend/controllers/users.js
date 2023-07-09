@@ -70,7 +70,7 @@ const login = (req, res, next) => {
             {
               _id: user._id,
             },
-            'process.env.JWT_SECRET',
+            process.env.JWT_SECRET,
           );
           // прикрепить его к куке
           res.cookie('jwt', jwt, {
