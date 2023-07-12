@@ -84,7 +84,7 @@ function App() {
         );
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
@@ -97,7 +97,7 @@ function App() {
         setCards((cards) => cards.filter((item) => item._id !== card._id));
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
@@ -109,7 +109,7 @@ function App() {
           setCurrentUser(data);
         })
         .catch((err) => {
-          alert(err);
+          console.log(err);
         });
     }
   }, [loggedIn]);
@@ -122,7 +122,7 @@ function App() {
           setCards(data);
         })
         .catch((err) => {
-          alert(err);
+          console.log(err);
         });
     }
   }, [loggedIn]);
@@ -140,7 +140,7 @@ function App() {
         closeAllPopups();
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
@@ -152,7 +152,7 @@ function App() {
         closeAllPopups();
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
@@ -164,7 +164,7 @@ function App() {
         closeAllPopups();
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
@@ -185,7 +185,7 @@ function App() {
           navigate("/");
         })
         .catch((err) => {
-          alert(err);
+          console.log(err);
         });
    // }
   }
