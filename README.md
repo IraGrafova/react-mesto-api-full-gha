@@ -11,6 +11,3 @@
 
 IP 158.160.50.205
 
-Frontend https://mesto-grafs.nomoreparties.sbs
-
-Backend https://api.mesto-grafs.nomoreparties.sbs
