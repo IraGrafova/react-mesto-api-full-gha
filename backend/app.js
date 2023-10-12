@@ -28,7 +28,8 @@ app.use(requestLogger); // подключаем логгер запросов
 
 app.use(cors({
   credentials: true,
-  origin: 'https://mesto-grafs.nomoreparties.sbs',
+  origin: 'http://localhost:3001'
+  // https://mesto-grafs.nomoreparties.sbs',
 }));
 
 app.use(router);

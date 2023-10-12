@@ -97,7 +97,8 @@ class Api {
 }
 
 const api = new Api({
-  url: "https://api.mesto-grafs.nomoreparties.sbs",
+  url: "http://localhost:3000",
+  // "https://api.mesto-grafs.nomoreparties.sbs",
   headers: {
     "content-type": "application/json",
 //   authorization: `Bearer ${localStorage.getItem("token")}`,

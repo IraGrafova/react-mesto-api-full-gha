@@ -1,4 +1,5 @@
-export const baseUrl = "https://api.mesto-grafs.nomoreparties.sbs";
+export const baseUrl = "http://localhost:3000";
+// https://api.mesto-grafs.nomoreparties.sbs";
 
 export const register = (data) => {
   return fetch(`${baseUrl}/signup`, {
